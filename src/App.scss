@@ -1,0 +1,101 @@
+$bg-active: #5fbf77;
+$text-inactive-color: #39414b;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.courses {
+  padding: 25px;
+
+  @include flex-between;
+
+  &__sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    width: 264px;
+    height: 100%;
+    margin-right: 24px;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px #cfcfe4 solid;
+
+    &-list {
+      width: 240px;
+
+      @include flex-column;
+    }
+
+    &-item {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 18px;
+      background-color: #fff;
+      color: #39414b;
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    background-color: #5fbf77;
+    color: #fff;
+  }
+
+  &__menu {
+    flex: 1;
+
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    &-item {
+      background-color: #fff;
+      border-radius: 18px;
+      box-shadow: 0px 10px 13px -4px #23235f30;
+
+      .item__image-wrapper {
+        border-radius: 18px 18px 0 0;
+        height: 162px;
+
+        @include flex-center;
+      }
+
+      .item-image {
+        width: 144px;
+        height: 144px;
+      }
+
+      .item-title {
+        padding: 12px 18px 18px;
+
+        font-family: "Nunito", sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 18px;
+      }
+    }
+  }
+}
