@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
+import "./styles.scss";
 import axios from "axios";
 import { TCourse } from "./types";
 import { Sidebar } from "./components/Sidebar";
@@ -9,7 +9,7 @@ import { ALL_THEMES_COURSE_NAME, COURSE_FILTER } from "./constants";
 const storageCourseFilter = window.localStorage.getItem(COURSE_FILTER);
 
 function App() {
-  const [courses, setCourses] = useState<TCourse[] | null>();
+  const [courses, setCourses] = useState<TCourse[] | []>();
   const [courseFilter, setCourseFilter] = useState<string>(
     storageCourseFilter || ALL_THEMES_COURSE_NAME
   );
